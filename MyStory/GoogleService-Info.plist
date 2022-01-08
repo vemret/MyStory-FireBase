@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>354695350625-0fg6l82m8afih2ofk04nekf4oj7fi6ni.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.354695350625-0fg6l82m8afih2ofk04nekf4oj7fi6ni</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAp6LQKNhIAOf74uiwPu-zie9OdgwuWWJ8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>354695350625</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.vehitemretellier.MyStory</string>
+	<key>PROJECT_ID</key>
+	<string>mystory-4079d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mystory-4079d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:354695350625:ios:7217ac771663ef4e5b1d20</string>
+</dict>
+</plist>
