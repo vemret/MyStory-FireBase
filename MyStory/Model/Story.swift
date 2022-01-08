@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Story {
+    var userName : String
+    var imgUrlArray : [String]
+    var date : Date
+    var timeDifference : Int
+}
