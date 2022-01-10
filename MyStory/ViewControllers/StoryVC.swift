@@ -14,6 +14,8 @@ class StoryVC: UIViewController {
 
     @IBOutlet weak var timeLeftLabel: UILabel!
     
+
+    
     var selectedStory : Story?
     var inputArray = [AlamofireSource]()
     

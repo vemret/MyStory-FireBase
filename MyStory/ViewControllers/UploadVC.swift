@@ -12,7 +12,7 @@ import grpc
 class UploadVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
-    
+
     @IBOutlet weak var uploadImg: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,8 @@ class UploadVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             
             imageRefrence.putData(data, metadata: nil) { data, error in
                 if error != nil {
-                    self.makeAlert(alertTitle: "Error", alertMessage: error?.localizedDescription ?? "error")
+                    
+                    MakeAlert.sharedMakeAlert.makeAlert(title: "Error", message: error?.localizedDescription ?? "error", context: self)
                 } else {
                     imageRefrence.downloadURL { url, error in
                         if error == nil {
@@ -63,7 +64,8 @@ class UploadVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                             
                             fireStore.collection("Stories").whereField("storyOwner", isEqualTo: UserSingleton.sharedUserInfo.userName).getDocuments { snapshot, error in
                                 if error != nil {
-                                    self.makeAlert(alertTitle: "Error!", alertMessage: error?.localizedDescription ?? "Error")
+                                    
+                                    MakeAlert.sharedMakeAlert.makeAlert(title: "Error!", message: error?.localizedDescription ?? "Error", context: self)
                                 } else {
                                     if snapshot?.isEmpty == false && snapshot != nil {
                                         for document in snapshot!.documents {
@@ -89,7 +91,7 @@ class UploadVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                                         let snapDictionary = ["imgUrlArray" : [imageUrl!], "storyOwner" : UserSingleton.sharedUserInfo.userName, "date" : FieldValue.serverTimestamp()] as [String : Any]
                                         fireStore.collection("Stories").addDocument(data: snapDictionary) { error in
                                             if error != nil {
-                                                self.makeAlert(alertTitle: "Error", alertMessage: error?.localizedDescription ?? "Error")
+                                                MakeAlert.sharedMakeAlert.makeAlert(title: "Error", message: error?.localizedDescription ?? "Error", context: self)
                                             } else {
             //                                    go to FeedVC
                                                 self.tabBarController?.selectedIndex = 0
@@ -111,11 +113,6 @@ class UploadVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         }
     }
     
-    func makeAlert(alertTitle : String, alertMessage : String) {
-        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertController.Style.alert)
-        let okBtn = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-        alert.addAction(okBtn)
-        self.present(alert, animated: true, completion: nil)
-    }
+
     
 }

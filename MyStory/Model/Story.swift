@@ -13,3 +13,4 @@ struct Story {
     var date : Date
     var timeDifference : Int
 }
+

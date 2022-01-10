@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import Firebase
 
 class SettingsVC: UIViewController {
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,14 +18,15 @@ class SettingsVC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
+    @IBAction func logoutBtnClicked(_ sender: Any) {
+        
+        do {
+            try Auth.auth().signOut()
+            self.performSegue(withIdentifier: "toSigninFromSettings", sender: nil)
+        } catch {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            MakeAlert.sharedMakeAlert.makeAlert(title: "Error", message: error.localizedDescription, context: self)
+        }
     }
-    */
 
 }

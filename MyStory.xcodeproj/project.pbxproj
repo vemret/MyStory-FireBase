@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00283B54BA5897ABD6F75519 /* Pods_MyStory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DB88713666A6EF493BBC9F0 /* Pods_MyStory.framework */; };
+		655253AB278B0AB4009EF694 /* MakeAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655253AA278B0AB4009EF694 /* MakeAlert.swift */; };
 		659F3AE42788B58000DEF325 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659F3AE32788B58000DEF325 /* FeedVC.swift */; };
 		659F3AE62788B59300DEF325 /* UploadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659F3AE52788B59300DEF325 /* UploadVC.swift */; };
 		659F3AE82788B5AE00DEF325 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659F3AE72788B5AE00DEF325 /* SettingsVC.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		0DB88713666A6EF493BBC9F0 /* Pods_MyStory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyStory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE59C66CCECF5EC87552B2E /* Pods-MyStory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStory.debug.xcconfig"; path = "Target Support Files/Pods-MyStory/Pods-MyStory.debug.xcconfig"; sourceTree = "<group>"; };
+		655253AA278B0AB4009EF694 /* MakeAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAlert.swift; sourceTree = "<group>"; };
 		659F3AE32788B58000DEF325 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		659F3AE52788B59300DEF325 /* UploadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVC.swift; sourceTree = "<group>"; };
 		659F3AE72788B5AE00DEF325 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		65CB552C278826D5006B4D42 /* MyStory */ = {
 			isa = PBXGroup;
 			children = (
+				655253AA278B0AB4009EF694 /* MakeAlert.swift */,
 				659F3AEF27899AD900DEF325 /* Model */,
 				659F3AEA2788B61500DEF325 /* Delegates */,
 				659F3AE92788B5E300DEF325 /* ViewControllers */,
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				655253AB278B0AB4009EF694 /* MakeAlert.swift in Sources */,
 				659F3AE42788B58000DEF325 /* FeedVC.swift in Sources */,
 				659F3AF32789BFA600DEF325 /* FeedCell.swift in Sources */,
 				659F3AEC2788B98E00DEF325 /* SignupVC.swift in Sources */,

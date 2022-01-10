@@ -13,6 +13,7 @@ class SigninVC: UIViewController {
 
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -23,13 +24,16 @@ class SigninVC: UIViewController {
         if emailText.text != "" && passwordText.text != "" {
             Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!) { authData, error in
                 if error != nil {
-                    self.makeAlert(alertTitle: "Error!", alertMessage: error?.localizedDescription ?? "Error!")
+                    MakeAlert.sharedMakeAlert.makeAlert(title: "Error!", message: error?.localizedDescription ?? "Error!", context: self)
+                    
                 } else {
                     self.performSegue(withIdentifier: "signinToFeedVC", sender: nil)
+                    
                 }
             }
         } else {
-            makeAlert(alertTitle: "Error", alertMessage: "Please fill the blanks!")
+            MakeAlert.sharedMakeAlert.makeAlert(title: "Error", message: "Please fill the blanks!", context: self)
+
         }
     }
     
@@ -37,12 +41,7 @@ class SigninVC: UIViewController {
         self.performSegue(withIdentifier: "toSignupVC", sender: nil)
     }
     
-    func makeAlert(alertTitle : String, alertMessage : String) {
-        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertController.Style.alert)
-        let okBtn = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-        alert.addAction(okBtn)
-        self.present(alert, animated: true, completion: nil)
-    }
+
     
 }
 

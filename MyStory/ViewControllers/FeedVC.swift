@@ -15,6 +15,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let fireStroeDatabase = Firestore.firestore()
     var storyArray  = [Story]()
     var choosenStory : Story?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //        snapshotlistener => her değişiklik olduğunda güncelle
         fireStroeDatabase.collection("Stories").order(by: "date", descending: true).addSnapshotListener { snapshot, error in
             if error != nil {
-                self.makeAlert(alertTitle: "Error!", alertMessage: error?.localizedDescription ?? "Error")
+                MakeAlert.sharedMakeAlert.makeAlert(title: "Error", message: error?.localizedDescription ?? "Error", context: self)
             } else {
                 if snapshot?.isEmpty == false && snapshot != nil {
                     self.storyArray.removeAll(keepingCapacity: false)
@@ -102,7 +103,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func getInfo(){
         fireStroeDatabase.collection("Users").whereField("email", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { snapshot, error in
             if error != nil {
-                self.makeAlert(alertTitle: "Error!", alertMessage: error?.localizedDescription ?? "Error")
+                MakeAlert.sharedMakeAlert.makeAlert(title: "Error!", message: error?.localizedDescription ?? "Error", context: self)
             } else {
                 if snapshot?.isEmpty == false && snapshot != nil {
                     for document in snapshot!.documents {
@@ -117,10 +118,5 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
     
-    func makeAlert(alertTitle : String, alertMessage : String) {
-        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertController.Style.alert)
-        let okBtn = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-        alert.addAction(okBtn)
-        self.present(alert, animated: true, completion: nil)
-    }
+
 }

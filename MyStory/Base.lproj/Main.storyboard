@@ -86,7 +86,7 @@
                         <outlet property="emailText" destination="ULH-WW-QaN" id="MSv-UJ-F8U"/>
                         <outlet property="passwordText" destination="Sq8-DF-TkQ" id="zfw-Gz-FRh"/>
                         <segue destination="FHI-rj-FJK" kind="presentation" identifier="signinToFeedVC" modalPresentationStyle="fullScreen" id="kkD-lZ-41Z"/>
-                        <segue destination="sMF-i8-DHx" kind="presentation" identifier="toSignupVC" modalPresentationStyle="fullScreen" id="94g-9z-XSd"/>
+                        <segue destination="sMF-i8-DHx" kind="show" identifier="toSignupVC" id="94g-9z-XSd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -98,7 +98,7 @@
             <objects>
                 <viewController id="sMF-i8-DHx" customClass="SignupVC" customModule="MyStory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MZa-3h-1cd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a7j-wL-y6m">
