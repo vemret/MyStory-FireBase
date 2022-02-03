@@ -10,4 +10,5 @@ pod 'ImageSlideshow', '~> 1.9.0'
 pod "ImageSlideshow/Alamofire"
 
 
+kullanıcılar tarafından yüklenen fotoğraflar 24 saat ana sayfada kaldıktan sonra siliniyor.
 
